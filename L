@@ -1,0 +1,171 @@
+# Project: Equirain — Portfolio + Token Landing (GitHub Pages)
+
+This single-file project contains everything you need to deploy a simple, modern portfolio / token landing page for **Equirain** (LGBTQ category) to **GitHub Pages**. It uses no external images (so you don't need to upload anything); colors and gradients are used for LGBTQ-friendly styling. Follow the README below to deploy and (optionally) connect the paid domain `equirain.io`.
+
+---
+
+## Files included
+
+- `index.html` — main HTML file (includes inline sections for About, Token, Roadmap, Team, Contact)
+- `style.css` — styling for the site
+- `README.md` — deployment + domain instructions
+- `CNAME` — (one-line) `equirain.io` (optional file — only add after you own the domain)
+
+---
+
+## index.html
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Equirain — LGBTQ Token & Community</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Equirain — an inclusive token supporting LGBTQ+ projects and community initiatives.">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>Equirain</h1>
+      <p class="tag">An inclusive token for the LGBTQ+ community</p>
+      <div class="buttons">
+        <a class="btn" href="#about">About</a>
+        <a class="btn ghost" href="#token">Token</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <h2>About Equirain</h2>
+      <p>Equirain is a community-first token built to support LGBTQ+ initiatives, events, and creators. This page is a simple portfolio / landing designed to showcase the token, roadmap, and team.</p>
+    </section>
+
+    <section id="token">
+      <h2>The Token</h2>
+      <ul>
+        <li>Name: Equirain (EQR)</li>
+        <li>Category: LGBTQ community token</li>
+        <li>Supply: <em>To be defined</em></li>
+      </ul>
+      <p class="note">(Add token contract address & links when ready)</p>
+    </section>
+
+    <section id="roadmap">
+      <h2>Roadmap</h2>
+      <ol>
+        <li>Tokenomics & contract audit</li>
+        <li>Community & partnerships</li>
+        <li>Listing & marketing</li>
+      </ol>
+    </section>
+
+    <section id="team">
+      <h2>Team</h2>
+      <p>Founders & contributors — add names and short bios here.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:hi@equirain.io">hi@equirain.io</a> (create mailbox after you own domain)</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year">2026</span> Equirain</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+```
+
+---
+
+## style.css
+
+```css
+:root{--bg:#0f172a;--card:#0b1220;--accent1:#ff2d95;--accent2:#7c4dff}
+*{box-sizing:border-box;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+body{margin:0;background:linear-gradient(180deg,#071029 0%, #071021 100%);color:#e6eef8}
+.container{max-width:980px;margin:0 auto;padding:28px}
+.hero{padding:80px 0;text-align:center;background:linear-gradient(90deg,#ff5fa2 0%, #ffd54f 20%, #2dd4bf 40%, #7c4dff 70%);color:#071021}
+.hero h1{font-size:48px;margin:0 0 8px}
+.tag{opacity:.95;margin-bottom:16px}
+.btn{display:inline-block;margin:6px 8px;padding:10px 18px;border-radius:10px;text-decoration:none;background:rgba(7,16,33,.08);color:inherit;font-weight:600}
+.btn.ghost{background:transparent;border:2px solid rgba(7,16,33,.08)}
+main{padding:40px 0}
+section{background:rgba(255,255,255,0.03);padding:22px;border-radius:12px;margin-bottom:18px}
+h2{margin-top:0}
+.note{color:#bcd}
+footer{padding:20px;text-align:center;opacity:.8}
+```
+
+---
+
+## README.md (deployment instructions)
+
+```md
+# Equirain — GitHub Pages Deployment
+
+## 1) Create GitHub repo
+- Create a new repository named `YOUR_USERNAME.github.io` (replace YOUR_USERNAME with your GitHub username)
+- Example: `harshgill.github.io`
+
+## 2) Upload files
+- Upload `index.html` and `style.css` to the repository root
+- Commit changes
+
+## 3) Enable GitHub Pages
+- Settings → Pages → Source: `main` branch (or `gh-pages`) and `/ (root)` folder → Save
+- Your site will be available at `https://YOUR_USERNAME.github.io`
+
+## 4) (Optional) Add custom domain `equirain.io`
+**Important:** you must first buy `equirain.io` from a registrar (examples below).
+
+### DNS setup for apex domain (equirain.io):
+Add these **A** records for `@` (apex):
+- 185.199.108.153
+- 185.199.109.153
+- 185.199.110.153
+- 185.199.111.153
+
+Add this **CNAME** for `www`:
+- Name: `www`
+- Value: `YOUR_USERNAME.github.io.`
+
+After DNS changes, in your GitHub Pages settings add `equirain.io` as the custom domain and verify. GitHub will also prompt you to add a TXT record for verification if needed.
+
+## 5) Email
+- After you buy the domain, you can set up email (MX records) with your registrar or a provider.
+
+## 6) Notes & security
+- GitHub provides free HTTPS (SSL) for custom domains — it can take up to an hour to issue certificate after DNS is correct.
+- Keep a copy of your repository and backup private data elsewhere.
+```
+
+---
+
+## How I handled images
+- This template uses no external images — hero uses gradient colors and text. If you later want to add a logo or screenshots, upload them to `images/` and reference them in `index.html`.
+
+---
+
+## How you can proceed (quick checklist)
+1. Create GitHub account (if not already) and repo `YOUR_USERNAME.github.io`.
+2. Upload these files from this canvas (`index.html`, `style.css`, `README.md`).
+3. Enable GitHub Pages and confirm `https://YOUR_USERNAME.github.io` works.
+4. Buy `equirain.io` from a registrar and follow README DNS steps to connect it.
+
+---
+
+Good luck — once you want, I can:
+- customize colors / copy / tokenomics section
+- add a contract address and social links
+- make a simple logo (CSS-based) or guide you to create one
+
+(End of code bundle)
